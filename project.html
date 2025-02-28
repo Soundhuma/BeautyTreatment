@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(241, 236, 231);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 200vh; 
+            width: 100%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 20px;
+        }
+        .nicepage{        
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; 
+    background-color: #c4c0a3;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+}
+
+        
+        .logo {
+            font-size: 24px;
+            color: lightgray;
+        }
+        nav {
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        .beauty {
+            color: #E49D89;
+        }
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            height: 500px;
+            margin-top: 50px;
+        }
+        .circle {
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            transition: transform 0.3s ease-out;
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .large {
+            width: 600px;
+            height: 600px;
+            top: 200px;
+            right: 50px;
+            
+        }
+        .medium {
+            width: 300px;
+            height: 300px;
+            top: 20px;
+            left: 40px;
+            top: 0px;
+        }
+        .small {
+            width: 220px;
+            height: 220px;
+            bottom: -20px;
+            left: 80px;
+            top: 400px;
+        }
+        .small1 {
+            width: 220px;
+            height: 220px;
+            bottom: -20px;
+            left: 800px;
+            top:10px;
+        }
+        .formm{
+            text-align: right;
+            padding-top: 910px;
+            font-size: 20px;
+          
+            
+        }
+        .beauty1{
+            text-align: right;
+            font-size: 60px;
+            font-style: italic;
+            letter-spacing: 3px;
+            margin: 0%;
+        }
+        .p1{
+            text-align: right;
+            font-size: medium;
+            
+        }
+
+
+
+        .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 100px;
+    text-align: center;
+    background: rgb(217, 210, 193);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+    margin: 0px;
+    
+}
+
+.icon {
+    font-size: 40px;
+    background: #beafa2;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-block;
+}
+
+
+.rolling-image {
+  width: 600px;
+  left: 800px; 
+  top: 350%;
+  transform: translateY(-50%) rotate(0deg) scale(0.2);
+  animation: roll-in 3s ease-in-out forwards;
+}
+
+@keyframes roll-in {
+  0% {
+    left: -200px;
+    transform: translateY(-50%) rotate(0deg) scale(0.2);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%) rotate(360deg) scale(1);
+  }
+}
+
+
+
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .circle {
+                position: static;
+                margin: 10px;
+            }
+        }
+
+
+       
+        
+
+
+        .content {
+            background: white;
+            padding: 30px;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: absolute;
+            left: 0%;
+            z-index: 2;
+           margin-top: 880px;
+           margin-right: 500px;
+        }
+        h1 {
+            font-size: 50px;
+            margin: 0;
+            color: #000;
+        }
+        p {
+            color: #555;
+            font-size: 20px;
+            font-style: italic;
+        }
+        .learn-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #da856b;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .image-container {
+            margin-top:0px;
+            transform: translateY(-50%) rotate(0deg) scale(0.2); 
+            animation: roll-in 3s ease-in-out forwards;
+            position: absolute;
+            right: 0;
+           overflow: hidden;
+           width: 600px;
+           left: 800px; 
+           margin-left: 100px;
+
+  top: 350%;
+           
+        }
+        
+
+
+
+.content1 {
+            background: rgb(250, 248, 248);
+            padding: 30px;
+            max-width: 500px;
+           margin-top: 950px;
+           position: relative;
+           opacity: 0;
+           transform: translateX(-100%);
+           animation: slideInLeft 1s ease-out forwards;
+         }
+        .eye-container{
+           
+            width: 220px;
+            height: 220px;
+            left: 700px;
+            margin-top: -200px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s ease-out forwards;
+          
+        }
+        @keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+.content2 {
+            background: rgb(250, 248, 248);
+            padding: 40px;
+            padding-bottom: 120px;
+            max-width: 500px;
+           margin-top: 150px;
+           position: relative;
+           left: 600px;
+           opacity: 0;
+           transform: translateX(-100%);
+           animation: slideInLeft 1s ease-out forwards;
+         }
+        .face-container{
+           
+            width: 220px;
+            height: 220px;
+            right: 600px;
+            margin-top: -300px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s ease-out forwards;
+          
+        }
+        @keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.beauty1{
+   
+    margin-top: 100px;
+}
+.formm{}
+
+
+
+.container3 {
+            max-width: 1500px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .image {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        
+        .upper {
+            transform: translateY(50px);
+        }
+
+       
+        .lower {
+            transform: translateY(-50px);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+.detail{
+            height: 400px;
+            width: 400px;
+            margin-top: 100px;
+            color:cornsilk;
+            background-color:rgb(164, 152, 152);
+            padding-top: 20px;
+            justify-content: center;
+            padding-left: 60px;
+            border-radius: 40px;
+            font-size: 20px;
+            padding-bottom: 20px;
+            align-items: center;
+}
+
+
+
+.section {
+            display: flex;
+            align-items: center;
+           
+            padding: 50px;
+            width: 100%;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container4 {
+            width: 50%;
+            position: relative;
+        }
+
+        .image-container4 img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            clip-path: ellipse(60% 50% at 50% 50%);
+            animation: moveImage 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveImage {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(50px);
+            }
+        }
+
+        .content4 {
+            width: 50%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 300px;
+        }
+
+        .content4 h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .content4 p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .content4 a {
+            display: inline-block;
+            background: #C87E5E;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .content4 a:hover {
+            background: #a8644a;
+        }
+
+        
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-container, .content {
+                width: 100%;
+            }
+        }
+
+
+        .testimonial-section {
+            display: flex;
+            align-items: center;
+            width: 80%;
+          
+            padding: 50px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .text-container {
+            width: 50%;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInText 1.5s ease-in-out forwards;
+        }
+
+        .text-container p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .text-container h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .quote {
+           
+            color: #d7cd9e;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 300px;
+        }
+
+     
+        .image-container7 {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInImage 1.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .image-container7 img {
+            width: 60%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        @media (max-width: 768px) {
+            .testimonial-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text-container, .image-container {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+     
+
+
+
+
+
+.sectionw {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+            overflow: hidden;
+        }
+
+        /* Left Side Image */
+        .left-imageup {
+            width: 50%;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .left-imageup img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .right-contentup {
+            width: 50%;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .right-contentup img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .h1up {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .pup {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .visibleup {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+        }
+
+       
+        @media (max-width: 768px) {
+            .sectionup {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left-imageup, .right-contentup {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+
+
+        .contact-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 50px;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .left-imagedown {
+            width: 50%;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .left-imagedown img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .right-contentdown{
+            width: 50%;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            margin-left: 100px;
+        }
+
+        .h12 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid black;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid black;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+           .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .visiblel {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left-imagedown, .right-contentdown {
+                width: 100%;
+                text-align: center;
+            }
+        }
+      
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+        <p class="nicepage"><br>Nastaf</p>
+    </div>
+       <div class="n">
+        <nav>
+            <a href="#">PAGE 15</a>
+            <a href="#">ABOUT US</a>
+            <a href="#" class="beauty">BEAUTY</a>
+        </nav>
+</div>
+    </header>
+    <div class="container">
+        <div class="circle medium"id="medium"><img src="D:\NASTAF\beauty.webp" alt="Person 1"></div>
+        <div class="circle large" id="large"><img src="D:\NASTAF\face.jpeg" alt="Person 2"></div>
+        <div class="circle small" id="small"><img src="D:\NASTAF\beauty2.jpeg" alt="Hands with Cream"></div>   
+        <div class="circle small1" id="small1"><img src="D:\NASTAF\cream.jpeg" alt=" Cream"></div>  
+    
+        <h3 class="formm">BEAUTY SALON</h3>
+        <p class="beauty1">Beauty <br>Treatments</p>      
+        <h3 class="p1">Images from <a href="https://www.example.com"style="color:black;"><u>Freepik</u></a></h3>
+
+        <div class="cards">
+            <div class="card fade-in">
+                <div class="icon">💅</div>
+                <h3>MANICURES</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <a href="#">MORE</a>
+            </div>
+            <div class="card fade-in">
+                <div class="icon">💆</div>
+                <h3>MASSAGE</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <a href="#">MORE</a>
+            </div>
+            <div class="card fade-in">
+                <div class="icon">🌿</div>
+                <h3>FACIALS</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <a href="#">MORE</a>
+            </div>
+            <div class="card fade-in">
+                <div class="icon">💦</div>
+                <h3>HYDROTHERAPY</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <a href="#">MORE</a>
+            </div>
+
+            
+
+              <div class="content">
+                <h1 style="font-size: larger; font-style:italic;">Welcome!</h1><br>
+                <p>New season, new wardrobe. As the temperatures <br><br>continue to rise, have your style follow suit and <br><br>revamp your racks with fresh, elevated summer<br> <br>looks.</p>
+                <p><small>Image from Freepik</small></p>
+                <a href="#" class="learn-more">LEARN MORE</a>
+            </div>
+            <div class=" circle image-container">
+                <img src="D:\NASTAF\facial1.jpeg" alt="Rolling Image"  id="facial3"style="width: 700px;">
+            </div>
+
+
+
+
+        </div>
+        <div>
+        
+            <div class="content1">
+            <p><b style="font-size: 34px;">Eyebrow Tinting</b>
+               </p style="font-size:26px">Ut enim ad minim veniam, quis nostrud exercitation<br><br>ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
+               Duis aute irure dolor in reprehenderit in voluptate velit<br><br>esse cillum dolore eu fugiat nulla pariatur. Excepteur sint<br><br>
+               occaecat cupidatat non proident, sunt in culpa qui officia<br><br>deserunt mollit anim id est laborum.
+               <div class=" circle eye-container">
+                <img src="D:\NASTAF\eye.jpeg" alt=" eyeImage"   class=" eye"id="eye">
+          
+            </div>
+        </div>
+
+        <div class="content2">
+            <p><b style="font-size: 34px;">Facials</b>
+               </p style="font-size:26px"> Aliquam ut porttitor leo a. Augue interdum velit euismod <br><br>in. Suscipit adipiscing bibendum est ultricies.<br><br>
+                Molestie a iaculis at erat pellentesque adipiscing commodo <br><br>elit at. Arcu dui vivamus arcu felis bibendum ut tristique et <br><br>
+                egestas. Tempus iaculis urna id volutpat lacus. Tortor at auctor<br><br> urna nunc id cursus metus aliquam. Adipiscing diam donec adipiscing<br><br>
+                 tristique risus nec feugiat.
+
+               <div class=" circle face-container">
+                <img src="D:\NASTAF\facial.jpeg" alt=" faceImage"   class=" face"id="face">
+          
+            </div>
+        </div>
+
+        <div class="beauty1">
+
+        <h1><center>Beauty Salon Services</center></h1>
+        <div class="container3">
+            <div class="gallery">
+                <img src="D:\NASTAF\beauty1.jpeg" class="image upper" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty2.jpeg" class="image lower" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty3.jpeg" class="image upper" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty4.jpeg" class="image lower" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty5.jpeg" class="image upper" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty6.jpeg" class="image lower" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty7.jpeg" class="image upper" alt="Beauty Service">
+                <img src="D:\NASTAF\beauty8.jpeg" class="image lower" alt="Beauty Service">
+            </div>
+        </div>
+
+    </div>
+    <div class="detail">
+        <h4 >Skin tightening   
+            $30 and up</h4>
+            <h4>Vajacial
+                $30 and up</h4>
+            <h4>Makeup application
+                $45 and up</h4>
+            <h4>Waxing
+                $25 and up</h4>
+            <h4>Manicure
+                $15 and up</h4>
+            <h4>Pedicure
+                $20 and up</h4>
+                <h4>Keratin Treatment
+                    $30 and up</h4>
+                <h4>Haircut
+                    $35 and up</h4>
+
+    </div>
+    
+    <div class="section">
+        <div class=" circle image-container4">
+            <img src="D:\NASTAF\downimage.jpeg" alt="Facial Treatment">
+        </div>
+        <div class="content4">
+            <h1>Welcome!</h1>
+            <p>New season, new wardrobe. As the temperatures continue to rise, have your style follow suit and revamp your racks with fresh, elevated summer looks.</p>
+            <p>Image from <a href="#">Freepik</a></p>
+            <a href="#">LEARN MORE</a>
+        </div>
+    </div>
+
+    <div class="testimonial-section">
+        <div class="text-container">
+            <p class="quote">*****</p>
+            <p>Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.</p>
+            <h3>CELIA ALMEDA</h3>
+
+            <p class="quote">*****</p>
+            <p>Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.</p>
+            <h3>FRANK KINNEY</h3>
+
+            <p class="quote">*****</p>
+            <p>Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.</p>
+            <h3>MILA NELSON</h3>
+        </div>
+
+        <div class="image-container7">
+            <img src="D:\NASTAF\down2.jpeg" alt="Smiling Woman">
+        </div>
+    </div>
+
+
+
+    <div class="contact-section">
+        <div class="left-imagedown">
+            <img src="D:\NASTAF\last.png" alt="Smiling Woman">
+        </div>
+
+        <div class="right-contentdown">
+            <h1 class=".h12">Contact Us</h1>
+            <div class="form-group">
+                <input type="text" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter a valid email address">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Enter your message" rows="4"></textarea>
+            </div>
+            <button class="submit-btn">SUBMIT</button>
+
+            <div class="social-icons">
+                <a href="#"><b>📘</b></a>
+                <a href="#"><b>🐦</b></a>
+                <a href="#"><b>📸</b></a>
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+    <script>
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.getElementById("large").style.transition = "transform 3s ease-in-out";
+                document.getElementById("medium").style.transition = "transform 3s ease-in-out";
+                document.getElementById("small").style.transition = "transform 3s ease-in-out";
+                document.getElementById("small1").style.transition = "transform 3s ease-in-out";
+                document.getElementById("facial3").style.transition = "transform 1s ease-in-out";
+
+                
+                document.getElementById("small1").style.transform = "rotate(360deg) translateX(50px)";
+                document.getElementById("large").style.transform = "rotate(360deg) translateX(50px)";
+                document.getElementById("medium").style.transform = "rotate(360deg) translateX(50px)";
+                document.getElementById("small").style.transform = "rotate(360deg) translateX(-50px)";
+                document.getElementById("facial3").style.transform = "rotate(360deg) translateX(-50px)";
+
+            }, 10);
+        });
+        
+        window.addEventListener("scroll", function () {
+            let scrollY = window.scrollY;
+            document.getElementById("large").style.transform = `rotate(${scrollY * 0.1}deg)`;
+            document.getElementById("medium").style.transform = `rotate(${scrollY * -0.1}deg)`;
+            document.getElementById("small").style.transform = `rotate(${scrollY * 0.15}deg)`;
+            document.getElementById("small1").style.transform = `rotate(${scrollY * 0.15}deg)`;
+            document.getElementById("facial3").style.transform = `rotate(${scrollY * 0.20}deg)`;
+
+            window.addEventListener("scroll", function () {
+    let elements = document.querySelectorAll(".fade-in");
+    elements.forEach((element) => {
+        let position = element.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
+        if (position < windowHeight - 100) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+        }
+    });
+});
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target); 
+                }
+            });
+        },
+        { threshold: 0.2 } 
+    );
+
+    document.querySelectorAll(".content1,.eye-container").forEach((element) => {
+        observer.observe(element);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target); 
+                }
+            });
+        },
+        { threshold: 0.2 } 
+    );
+
+    document.querySelectorAll(".content2,.face-container").forEach((element) => {
+        observer.observe(element);
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".image");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        }
+                    });
+                },
+                { threshold: 0.3 } 
+            );
+
+            images.forEach((image) => {
+                observer.observe(image);
+            });
+        });
+
+        function revealOnScroll() {
+            const leftImage = document.querySelector('.left-imageup');
+            const rightContent = document.querySelector('.right-contentup');
+            const section = document.querySelector('.sectionw');
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight - 100) {
+                leftImage.classList.add('visibleup');
+                rightContent.classList.add('visibleup');
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); 
+
+        function revealOnScroll() {
+            const leftImage = document.querySelector('.left-imagedown');
+            const rightContent = document.querySelector('.right-contentdown');
+            const section = document.querySelector('.contact-section');
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight - 100) {
+                leftImage.classList.add('visiblel');
+                rightContent.classList.add('visiblel');
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); 
+  
+
+
+
+    </script>
+</body>
+</html>
